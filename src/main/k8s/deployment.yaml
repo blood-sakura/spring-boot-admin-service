@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-boot-admin
+spec:
+  selector:
+    matchLabels:
+      run: spring-boot-admin
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        run: spring-boot-admin
+    spec:
+      containers:
+      - name: spring-boot-admin
+        image: apacpoc.azurecr.io/spring-boot-admin:0.0.1-SNAPSHOT
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
