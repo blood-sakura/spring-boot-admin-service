@@ -10,6 +10,7 @@ server:
 # tag::configuration-eureka[]
 eureka:   #<1>
   instance:
+    prefer-ip-address: true
     leaseRenewalIntervalInSeconds: 10
     health-check-url-path: /actuator/health
   client:
