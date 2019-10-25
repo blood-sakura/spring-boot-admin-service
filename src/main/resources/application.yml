@@ -5,7 +5,7 @@ spring:
     active:
       - secure
 server:
-  port: 8080
+  port: 80
 
 # tag::configuration-eureka[]
 eureka:   #<1>
